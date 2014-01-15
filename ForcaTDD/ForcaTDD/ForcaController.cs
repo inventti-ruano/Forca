@@ -7,5 +7,16 @@ namespace ForcaTDD
 {
     class ForcaController
     {
+        private readonly string palavra;
+
+        public ForcaController(string palavra)
+        {
+            this.palavra = palavra;
+        }
+
+        public bool EscolherLetra(char letra)
+        {
+            return palavra.Contains(letra);
+        }
     }
 }

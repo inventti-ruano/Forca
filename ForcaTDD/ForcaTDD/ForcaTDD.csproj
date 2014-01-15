@@ -52,7 +52,10 @@
     <Compile Include="ForcaController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SorteioPalavra.cs" />
     <Compile Include="Testes\ForcaControllerTeste.cs" />
+    <Compile Include="ISorteioPalavra.cs" />
+    <Compile Include="Testes\SorteioPalavraStub.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
