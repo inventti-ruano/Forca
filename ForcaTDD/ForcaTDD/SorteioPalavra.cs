@@ -7,5 +7,11 @@ namespace ForcaTDD
 {
     class SorteioPalavra
     {
+
+        public static List<string> RetornarListaDePalavras()
+        {
+            var listaPalavras = new List<string> {"BLUMENAU"};
+            return listaPalavras;
+        }
     }
 }

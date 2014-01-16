@@ -9,7 +9,8 @@ namespace ForcaTDD
     {
         static void Main(string[] args)
         {
-
+            Console.Write("TESTE");
+            Console.ReadKey();
         }
     }
 }
