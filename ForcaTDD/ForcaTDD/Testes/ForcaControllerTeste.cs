@@ -15,7 +15,7 @@ namespace ForcaTDD.Testes
         }
 
         [Test]
-        public void usuario_escolhe_uma_letra_e_errar()
+        public void usuario_escolhe_uma_letra_e_erra()
         {
             var forca = new ForcaController("bla");
 
@@ -34,6 +34,16 @@ namespace ForcaTDD.Testes
             bool acertou = forca.EscolherLetra(letraValida);
 
             Assert.IsTrue(acertou);
+        }
+
+        public void verificar_se_a_mesma_letra_foi_informada_mais_de_uma_vez()
+        {
+            var forca = new ForcaController("teste");
+        }
+
+        public void validar_se_encerrou_o_jogo()
+        {
+            
         }
     }
 }
