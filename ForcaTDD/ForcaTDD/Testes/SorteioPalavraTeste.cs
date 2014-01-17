@@ -11,12 +11,9 @@ namespace ForcaTDD.Testes
         [Test]
         public void validar_uma_palavra_do_sorteio()
         {
-            string palavraSorteada;
-            List<string> retornoListaSorteada = null;
-            retornoListaSorteada = SorteioPalavra.RetornarListaDePalavras();
-            palavraSorteada = retornoListaSorteada[0];
-
-            Assert.AreEqual(palavraSorteada, "BLUMENAU");
+            var palavraSorteada = SorteioPalavra.RetornaPalavraSorteada();
+            
+            Assert.IsTrue(palavraSorteada != null);
         }
     }
 }

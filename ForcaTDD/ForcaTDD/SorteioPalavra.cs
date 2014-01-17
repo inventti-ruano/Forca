@@ -7,11 +7,17 @@ namespace ForcaTDD
 {
     class SorteioPalavra
     {
-
-        public static List<string> RetornarListaDePalavras()
+        public static string RetornaPalavraSorteada()
         {
-            var listaPalavras = new List<string> {"BLUMENAU"};
-            return listaPalavras;
+            var random = new Random();
+            var listaPalavars = new List<string> {"BLUMENAU", 
+                                                  "ITAJAI", 
+                                                  "CHAPECO",
+                                                  "FLORIANOPOLIS",
+                                                  "POMERODE",
+                                                  "INDAIAL"};
+
+            return listaPalavars[random.Next(listaPalavars.Count)];
         }
     }
 }

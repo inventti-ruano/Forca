@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace ForcaTDD
 {
@@ -9,15 +10,16 @@ namespace ForcaTDD
         private int quantidadeErros;
         private List<char> letrasJaInformadas;
         private char[] palavraFormada;
+        private string p;
 
-        public ForcaController(string palavra)
+        public ForcaController()
         {
-            this.IniciarJogo(palavra);
+            this.IniciarJogo();
         }
 
-        private void IniciarJogo(string palavra)
+        private void IniciarJogo()
         {
-            this.palavraResposta = palavra;
+            this.palavraResposta = SorteioPalavra.RetornaPalavraSorteada();
             this.letrasJaInformadas = new List<char>();
             this.palavraFormada = new char[this.palavraResposta.Length];
             this.quantidadeErros = 0;
@@ -49,7 +51,7 @@ namespace ForcaTDD
             return jaExiste;
         }
 
-        public char[] AtribuirPosicaoDasLetrasNaPalavra(char letra)
+        private void AtribuirPosicaoDasLetrasNaPalavra(char letra)
         {
             for (int i = 0; i < this.palavraResposta.Length; i++)
             {
@@ -58,7 +60,11 @@ namespace ForcaTDD
                     this.palavraFormada[i] = letra;
                 }
             }
-            return this.palavraFormada;
+        }
+
+        public int RetornaQuantidadeErros()
+        {
+            return this.quantidadeErros;
         }
 
         public bool FinalizouJogo()
@@ -66,9 +72,24 @@ namespace ForcaTDD
             return !this.palavraFormada.Contains(default(char)) || this.quantidadeErros > 5;
         }
 
-        public char TratarMaiusculaMinuscula(char letra)
+        private char TratarMaiusculaMinuscula(char letra)
         {
             return char.ToUpper(letra);
+        }
+
+        public string RetornarDesenhoForca()
+        {
+            var sb = new StringBuilder();
+            for (int i = 0; i < this.palavraFormada.Length; i++)
+            {
+                sb.Append(this.palavraFormada[i] != '\0' ? this.palavraFormada[i].ToString() : "_").Append(" ");
+            }
+            return sb.ToString().Trim();
+        }
+
+        public bool RetornarVitoria()
+        {
+            return !this.palavraFormada.Contains(default(char)) && this.quantidadeErros < 6;
         }
     }
 }
